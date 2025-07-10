@@ -1,11 +1,11 @@
 class NetworkResponse {
   final int statusCode;
   final bool isSuccess;
-  final List body;
+  final List responseData;
 
-  const NetworkResponse(
-    this.isSuccess,
-    this.statusCode,
-    this.body,
-  );
+  const NetworkResponse({
+    required this.isSuccess,
+    required this.statusCode,
+    required this.responseData,
+  });
 }

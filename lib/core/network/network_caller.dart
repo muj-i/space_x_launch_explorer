@@ -12,13 +12,13 @@ class NetworkCaller {
         final decoded = jsonDecode(response.body); 
         log('GET request successful: ${response.statusCode}');
         log('Response body: $decoded');
-        return NetworkResponse(true, response.statusCode, decoded);
+        return NetworkResponse(isSuccess: true, statusCode: response.statusCode, responseData: decoded);
       } else {
-        return NetworkResponse(false, response.statusCode, []);
+        return NetworkResponse(isSuccess: false, statusCode: response.statusCode, responseData: []);
       }
     } catch (e) {
       log('Error occurred during GET request: $e');
-      return const NetworkResponse(false, -1, []);
+      return const NetworkResponse(isSuccess: false, statusCode: -1, responseData: []);
     }
   }
 }

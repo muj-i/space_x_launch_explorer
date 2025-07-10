@@ -11,8 +11,8 @@ class HomeRepo {
       final res = await NetworkCaller.getRequest(ApiUrls.launches);
       if (res.isSuccess) {
         log('ReGET request successful: ${res.statusCode}');
-        log('reResponse body: ${res.body}');
-        return launchesResModelFromJson(jsonEncode(res.body));
+        log('reResponse body: ${res.responseData}');
+        return launchesResModelFromJson(jsonEncode(res.responseData));
       } else {
         return [];
       }
@@ -21,5 +21,4 @@ class HomeRepo {
       return [];
     }
   }
-  
 }
